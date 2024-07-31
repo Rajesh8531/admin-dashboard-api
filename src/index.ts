@@ -38,6 +38,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
+app.options('*', cors(corsOptions));
+
 const port = process.env.PORT || 8000;
 
 app.use('/auth',authRouter)
