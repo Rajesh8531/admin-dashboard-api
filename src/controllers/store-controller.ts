@@ -53,7 +53,7 @@ export const getStores = async (request:Request,res:Response) => {
         return res.status(200).json(store)
         
     } catch (error) {
-        console.log("CREATE_STORE_CONTROLLER",error)
+        console.log("GET_STORE_CONTROLLER",error)
         return res.status(500).json("Something went wrong")
     }
 }

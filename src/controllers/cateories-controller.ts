@@ -10,6 +10,10 @@ export const getCategories = async (request:Request,res:Response) => {
 
         const {storeId} = req.params
 
+        if(!isValidId){
+            return null
+        }
+
         const categories = await prismadb.category.findMany({
             where : {
                 storeId

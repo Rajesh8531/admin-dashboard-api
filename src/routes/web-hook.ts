@@ -70,9 +70,6 @@ router.post('/',express.json({type : 'application/json'}),async (request : any,r
 })
 
 
-
-// export default router
-
 // This is your test secret API key.
 // Replace this endpoint secret with your endpoint's unique secret
 // If you are testing with the CLI, find the secret by running 'stripe listen'

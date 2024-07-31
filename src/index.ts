@@ -29,7 +29,14 @@ app.use(
 app.use(bodyParser.urlencoded({extended:true}))
 app.use('/webhook',webHookRouter)
 
-app.use(cors())
+const corsOptions = {
+    origin: '*',
+    methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+};
+
+app.use(cors(corsOptions))
 
 const port = process.env.PORT || 8000;
 

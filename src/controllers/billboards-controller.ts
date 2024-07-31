@@ -10,6 +10,10 @@ export const getBillboards = async (request:Request,res:Response) => {
 
         const {storeId} = req.params
 
+        if(!isValidId(storeId)){
+            return null
+        }
+
         const billboards = await prismadb.billBoard.findMany({
             where : {
                 storeId
@@ -153,7 +157,7 @@ export const deleteBillboard = async (request:Request,res:Response) => {
 
         const userId = req.userId
         
-        if(!isValidId(storeId)){
+        if(!isValidId(storeId) || !isValidId(billboardId)){
             return res.status(403).json("Invalid StoreId")
         }
 
